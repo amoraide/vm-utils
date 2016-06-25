@@ -12,10 +12,10 @@ test2
 
 ## Usage ##
 Turn on all VMs:  
-`vmon all`
+`vmon --all`
 
 Turn off all VMs:  
-`vmoff all`
+`vmoff --all`
 
 Turn on a specific VM:  
 `vmon <nameofvm>`
