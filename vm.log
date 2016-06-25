@@ -1,0 +1,104 @@
+VBoxManage: error: Invalid machine state: PoweredOff (must be Running, Paused or Stuck)
+VBoxManage: error: Details: code VBOX_E_INVALID_VM_STATE (0x80bb0002), component Console, interface IConsole, callee nsISupports
+VBoxManage: error: Context: "PowerDown(progress.asOutParam())" at line 228 of file VBoxManageControlVM.cpp
+VBoxManage: error: Invalid machine state: PoweredOff (must be Running, Paused or Stuck)
+VBoxManage: error: Details: code VBOX_E_INVALID_VM_STATE (0x80bb0002), component Console, interface IConsole, callee nsISupports
+VBoxManage: error: Context: "PowerDown(progress.asOutParam())" at line 228 of file VBoxManageControlVM.cpp
+VBoxManage: error: Invalid machine state: PoweredOff (must be Running, Paused or Stuck)
+VBoxManage: error: Details: code VBOX_E_INVALID_VM_STATE (0x80bb0002), component Console, interface IConsole, callee nsISupports
+VBoxManage: error: Context: "PowerDown(progress.asOutParam())" at line 228 of file VBoxManageControlVM.cpp
+VBoxManage: error: Invalid machine state: PoweredOff (must be Running, Paused or Stuck)
+VBoxManage: error: Details: code VBOX_E_INVALID_VM_STATE (0x80bb0002), component Console, interface IConsole, callee nsISupports
+VBoxManage: error: Context: "PowerDown(progress.asOutParam())" at line 228 of file VBoxManageControlVM.cpp
+VBoxManage: error: The machine 'test1' is already locked by a session (or being locked or unlocked)
+VBoxManage: error: Details: code VBOX_E_INVALID_OBJECT_STATE (0x80bb0007), component Machine, interface IMachine, callee nsISupports
+VBoxManage: error: Context: "LaunchVMProcess(a->session, sessionType.raw(), env.raw(), progress.asOutParam())" at line 592 of file VBoxManageMisc.cpp
+0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+VBoxManage: error: The machine 'test1' is already locked by a session (or being locked or unlocked)
+VBoxManage: error: Details: code VBOX_E_INVALID_OBJECT_STATE (0x80bb0007), component Machine, interface IMachine, callee nsISupports
+VBoxManage: error: Context: "LaunchVMProcess(a->session, sessionType.raw(), env.raw(), progress.asOutParam())" at line 592 of file VBoxManageMisc.cpp
+0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+VBoxManage: error: Invalid machine state: PoweredOff (must be Running, Paused or Stuck)
+VBoxManage: error: Details: code VBOX_E_INVALID_VM_STATE (0x80bb0002), component Console, interface IConsole, callee nsISupports
+VBoxManage: error: Context: "PowerDown(progress.asOutParam())" at line 228 of file VBoxManageControlVM.cpp
+VBoxManage: error: The machine 'test1' is already locked by a session (or being locked or unlocked)
+VBoxManage: error: Details: code VBOX_E_INVALID_OBJECT_STATE (0x80bb0007), component Machine, interface IMachine, callee nsISupports
+VBoxManage: error: Context: "LaunchVMProcess(a->session, sessionType.raw(), env.raw(), progress.asOutParam())" at line 592 of file VBoxManageMisc.cpp
+VBoxManage: error: The machine 'test1' is already locked by a session (or being locked or unlocked)
+VBoxManage: error: Details: code VBOX_E_INVALID_OBJECT_STATE (0x80bb0007), component Machine, interface IMachine, callee nsISupports
+VBoxManage: error: Context: "LaunchVMProcess(a->session, sessionType.raw(), env.raw(), progress.asOutParam())" at line 592 of file VBoxManageMisc.cpp
+VBoxManage: error: The machine 'test1' is already locked by a session (or being locked or unlocked)
+VBoxManage: error: Details: code VBOX_E_INVALID_OBJECT_STATE (0x80bb0007), component Machine, interface IMachine, callee nsISupports
+VBoxManage: error: Context: "LaunchVMProcess(a->session, sessionType.raw(), env.raw(), progress.asOutParam())" at line 592 of file VBoxManageMisc.cpp
+0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+VBoxManage: error: Invalid machine state: PoweredOff (must be Running, Paused or Stuck)
+VBoxManage: error: Details: code VBOX_E_INVALID_VM_STATE (0x80bb0002), component Console, interface IConsole, callee nsISupports
+VBoxManage: error: Context: "PowerDown(progress.asOutParam())" at line 228 of file VBoxManageControlVM.cpp
+VBoxManage: error: Invalid machine state: PoweredOff (must be Running, Paused or Stuck)
+VBoxManage: error: Details: code VBOX_E_INVALID_VM_STATE (0x80bb0002), component Console, interface IConsole, callee nsISupports
+VBoxManage: error: Context: "PowerDown(progress.asOutParam())" at line 228 of file VBoxManageControlVM.cpp
+VBoxManage: error: Invalid machine state: PoweredOff (must be Running, Paused or Stuck)
+VBoxManage: error: Details: code VBOX_E_INVALID_VM_STATE (0x80bb0002), component Console, interface IConsole, callee nsISupports
+VBoxManage: error: Context: "PowerDown(progress.asOutParam())" at line 228 of file VBoxManageControlVM.cpp
+VBoxManage: error: Invalid machine state: PoweredOff (must be Running, Paused or Stuck)
+VBoxManage: error: Details: code VBOX_E_INVALID_VM_STATE (0x80bb0002), component Console, interface IConsole, callee nsISupports
+VBoxManage: error: Context: "PowerDown(progress.asOutParam())" at line 228 of file VBoxManageControlVM.cpp
+VBoxManage: error: Invalid machine state: PoweredOff (must be Running, Paused or Stuck)
+VBoxManage: error: Details: code VBOX_E_INVALID_VM_STATE (0x80bb0002), component Console, interface IConsole, callee nsISupports
+VBoxManage: error: Context: "PowerDown(progress.asOutParam())" at line 228 of file VBoxManageControlVM.cpp
+VBoxManage: error: Invalid machine state: PoweredOff (must be Running, Paused or Stuck)
+VBoxManage: error: Details: code VBOX_E_INVALID_VM_STATE (0x80bb0002), component Console, interface IConsole, callee nsISupports
+VBoxManage: error: Context: "PowerDown(progress.asOutParam())" at line 228 of file VBoxManageControlVM.cpp
+VBoxManage: error: Invalid machine state: PoweredOff (must be Running, Paused or Stuck)
+VBoxManage: error: Details: code VBOX_E_INVALID_VM_STATE (0x80bb0002), component Console, interface IConsole, callee nsISupports
+VBoxManage: error: Context: "PowerDown(progress.asOutParam())" at line 228 of file VBoxManageControlVM.cpp
+VBoxManage: error: Invalid machine state: PoweredOff (must be Running, Paused or Stuck)
+VBoxManage: error: Details: code VBOX_E_INVALID_VM_STATE (0x80bb0002), component Console, interface IConsole, callee nsISupports
+VBoxManage: error: Context: "PowerDown(progress.asOutParam())" at line 228 of file VBoxManageControlVM.cpp
+VBoxManage: error: Invalid machine state: PoweredOff (must be Running, Paused or Stuck)
+VBoxManage: error: Details: code VBOX_E_INVALID_VM_STATE (0x80bb0002), component Console, interface IConsole, callee nsISupports
+VBoxManage: error: Context: "PowerDown(progress.asOutParam())" at line 228 of file VBoxManageControlVM.cpp
+VBoxManage: error: Invalid machine state: PoweredOff (must be Running, Paused or Stuck)
+VBoxManage: error: Details: code VBOX_E_INVALID_VM_STATE (0x80bb0002), component Console, interface IConsole, callee nsISupports
+VBoxManage: error: Context: "PowerDown(progress.asOutParam())" at line 228 of file VBoxManageControlVM.cpp
+VBoxManage: error: Invalid machine state: PoweredOff (must be Running, Paused or Stuck)
+VBoxManage: error: Details: code VBOX_E_INVALID_VM_STATE (0x80bb0002), component Console, interface IConsole, callee nsISupports
+VBoxManage: error: Context: "PowerDown(progress.asOutParam())" at line 228 of file VBoxManageControlVM.cpp
+VBoxManage: error: Invalid machine state: PoweredOff (must be Running, Paused or Stuck)
+VBoxManage: error: Details: code VBOX_E_INVALID_VM_STATE (0x80bb0002), component Console, interface IConsole, callee nsISupports
+VBoxManage: error: Context: "PowerDown(progress.asOutParam())" at line 228 of file VBoxManageControlVM.cpp
+VBoxManage: error: Invalid machine state: PoweredOff (must be Running, Paused or Stuck)
+VBoxManage: error: Details: code VBOX_E_INVALID_VM_STATE (0x80bb0002), component Console, interface IConsole, callee nsISupports
+VBoxManage: error: Context: "PowerDown(progress.asOutParam())" at line 228 of file VBoxManageControlVM.cpp
+VBoxManage: error: Invalid machine state: PoweredOff (must be Running, Paused or Stuck)
+VBoxManage: error: Details: code VBOX_E_INVALID_VM_STATE (0x80bb0002), component Console, interface IConsole, callee nsISupports
+VBoxManage: error: Context: "PowerDown(progress.asOutParam())" at line 228 of file VBoxManageControlVM.cpp
+VBoxManage: error: Invalid machine state: PoweredOff (must be Running, Paused or Stuck)
+VBoxManage: error: Details: code VBOX_E_INVALID_VM_STATE (0x80bb0002), component Console, interface IConsole, callee nsISupports
+VBoxManage: error: Context: "PowerDown(progress.asOutParam())" at line 228 of file VBoxManageControlVM.cpp
+VBoxManage: error: Invalid machine state: PoweredOff (must be Running, Paused or Stuck)
+VBoxManage: error: Details: code VBOX_E_INVALID_VM_STATE (0x80bb0002), component Console, interface IConsole, callee nsISupports
+VBoxManage: error: Context: "PowerDown(progress.asOutParam())" at line 228 of file VBoxManageControlVM.cpp
+VBoxManage: error: Invalid machine state: PoweredOff (must be Running, Paused or Stuck)
+VBoxManage: error: Details: code VBOX_E_INVALID_VM_STATE (0x80bb0002), component Console, interface IConsole, callee nsISupports
+VBoxManage: error: Context: "PowerDown(progress.asOutParam())" at line 228 of file VBoxManageControlVM.cpp
+VBoxManage: error: Invalid machine state: PoweredOff (must be Running, Paused or Stuck)
+VBoxManage: error: Details: code VBOX_E_INVALID_VM_STATE (0x80bb0002), component Console, interface IConsole, callee nsISupports
+VBoxManage: error: Context: "PowerDown(progress.asOutParam())" at line 228 of file VBoxManageControlVM.cpp
+VBoxManage: error: Invalid machine state: PoweredOff (must be Running, Paused or Stuck)
+VBoxManage: error: Details: code VBOX_E_INVALID_VM_STATE (0x80bb0002), component Console, interface IConsole, callee nsISupports
+VBoxManage: error: Context: "PowerDown(progress.asOutParam())" at line 228 of file VBoxManageControlVM.cpp
+VBoxManage: error: Invalid machine state: PoweredOff (must be Running, Paused or Stuck)
+VBoxManage: error: Details: code VBOX_E_INVALID_VM_STATE (0x80bb0002), component Console, interface IConsole, callee nsISupports
+VBoxManage: error: Context: "PowerDown(progress.asOutParam())" at line 228 of file VBoxManageControlVM.cpp
+VBoxManage: error: Invalid machine state: PoweredOff (must be Running, Paused or Stuck)
+VBoxManage: error: Details: code VBOX_E_INVALID_VM_STATE (0x80bb0002), component Console, interface IConsole, callee nsISupports
+VBoxManage: error: Context: "PowerDown(progress.asOutParam())" at line 228 of file VBoxManageControlVM.cpp
+VBoxManage: error: The machine 'test1' is already locked by a session (or being locked or unlocked)
+VBoxManage: error: Details: code VBOX_E_INVALID_OBJECT_STATE (0x80bb0007), component Machine, interface IMachine, callee nsISupports
+VBoxManage: error: Context: "LaunchVMProcess(a->session, sessionType.raw(), env.raw(), progress.asOutParam())" at line 592 of file VBoxManageMisc.cpp
+VBoxManage: error: The machine 'test1' is already locked by a session (or being locked or unlocked)
+VBoxManage: error: Details: code VBOX_E_INVALID_OBJECT_STATE (0x80bb0007), component Machine, interface IMachine, callee nsISupports
+VBoxManage: error: Context: "LaunchVMProcess(a->session, sessionType.raw(), env.raw(), progress.asOutParam())" at line 592 of file VBoxManageMisc.cpp
+0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%

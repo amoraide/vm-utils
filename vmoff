@@ -1,0 +1,40 @@
+#!/bin/bash
+
+args=("$@")
+FILE_PATH=$(readlink -f "$0")
+FILE_DIR=$(dirname "$FILE_PATH")
+LIST_FILE=$FILE_DIR"/vm.list"
+LOG_FILE=$FILE_DIR"/vm.log"
+
+# Preparation
+VMLIST=()
+while IFS=$'\n' read -a config
+do
+  VMLIST+=(${config})
+done < $LIST_FILE
+
+# Handle Commands
+missing=true
+if [ $# -ne 1 ]
+  then
+    echo "Invalid Parameters"
+else
+  for vm in ${VMLIST[@]}
+  do
+    if [ $1 == "--all" ] || [ $1 == $vm ]
+      then
+        missing=false
+        echo "Turning \"$vm\" off"
+        vboxmanage controlvm $vm poweroff 2>>$LOG_FILE
+        if [ $? -eq 0 ]; then 
+          echo "Successfully turned \"$vm\" off"
+        else
+          echo "Failed turning \"$vm\" off"
+        fi
+    fi
+  done
+fi
+
+if $missing ; then
+  echo "No VM $1 found"
+fi
