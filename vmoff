@@ -36,5 +36,5 @@ else
 fi
 
 if $missing ; then
-  echo "No VM $1 found"
+  echo "No VM \"$1\" registered"
 fi

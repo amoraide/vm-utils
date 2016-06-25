@@ -26,13 +26,13 @@ else
         missing=false
         online=$(vboxmanage showvminfo $vm | grep -c "running" )
         if [ $online -eq 0 ]; then
-          echo "$vm is currently offline"
+          echo "\"$vm\" is currently offline"
         else
-          echo "$vm is currently online"
+          echo "\"$vm\" is currently online"
         fi
     fi
   done
 fi
 if $missing ; then
-  echo "No VM $1 found"
+  echo "No VM \"$1\" registered"
 fi
