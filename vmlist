@@ -8,25 +8,32 @@ LOG_FILE=$FILE_DIR"/vm.log"
 
 VALID_VMS=($(vboxmanage list vms | grep -oP '"\K[^"\047]+(?=["\047])'))
 VMLIST=()
-
-# Show registered VMs
 while IFS=$'\n' read -a vm
 do
-  if [ $# -eq 0 ] || [ $1 == "--all" ]; then
-    echo "VM \"${vm}\" is registered"
-  fi
   VMLIST+=(${vm})
 done < $LIST_FILE
 
-# Show valid Virtualbox VMs
-if [ $# -gt 1 ]; then
-  echo "Invalid parameters"
+if [ $# -eq 0 ]; then
+  for vm in ${VMLIST[@]}; do
+    echo "VM \"${vm}\" is registered"
+  done
 elif [ $# -eq 1 ]; then
-  if [ $1 == "--all" ] || [ $1 == "--valid" ]; then
-    for valid in ${VALID_VMS[@]}; do
+  missing=true
+  for vm in ${VMLIST[@]}; do
+    if [ $1 == "--all" ] || [ $1 == $vm ]; then
+      missing=false
+      echo "VM \"${vm}\" is registered"
+    fi
+  done
+  for valid in ${VALID_VMS[@]}; do
+    if [ $1 == "--all" ] || [ $1 == $valid ] || [ $1 == "--valid" ]; then
+      missing=false
       echo "VM \"$valid\" is a valid VM"
-    done
-  else
-    echo "Invalid Parameters"
+    fi
+  done
+  if $missing ; then
+    echo "No VM \"$1\" found"
   fi
+else
+  echo "Invalid parameters"
 fi
