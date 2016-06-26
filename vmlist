@@ -1,0 +1,32 @@
+#!/bin/bash
+
+args=("$@")
+FILE_PATH=$(readlink -f "$0")
+FILE_DIR=$(dirname "$FILE_PATH")
+LIST_FILE=$FILE_DIR"/vm.list"
+LOG_FILE=$FILE_DIR"/vm.log"
+
+VALID_VMS=($(vboxmanage list vms | grep -oP '"\K[^"\047]+(?=["\047])'))
+VMLIST=()
+
+# Show registered VMs
+while IFS=$'\n' read -a vm
+do
+  if [ $# -eq 0 ] || [ $1 == "--all" ]; then
+    echo "VM \"${vm}\" is registered"
+  fi
+  VMLIST+=(${vm})
+done < $LIST_FILE
+
+# Show valid Virtualbox VMs
+if [ $# -gt 1 ]; then
+  echo "Invalid parameters"
+elif [ $# -eq 1 ]; then
+  if [ $1 == "--all" ] || [ $1 == "--valid" ]; then
+    for valid in ${VALID_VMS[@]}; do
+      echo "VM \"$valid\" is a valid VM"
+    done
+  else
+    echo "Invalid Parameters"
+  fi
+fi
