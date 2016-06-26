@@ -9,17 +9,36 @@ Example:
 test1
 test2
 ```
+I typically symlink the tools in `/usr/bin` though up to you.
 
 ## Usage ##
-Turn on all VMs:  
-`vmon --all`
-
-Turn off all VMs:  
-`vmoff --all`
-
-Turn on a specific VM:  
-`vmon <nameofvm>`
-
-Turn off a specific VM:  
-`vmoff <nameofvm>`
-
+### Tools ###
+```
+vmon
+vmoff
+vmstate
+vmlist
+```
+### Commands ###
+#### vmon ####
+```
+vmon --all
+vmon <vm name>
+```
+#### vmoff ####
+```
+vmoff --all
+vmoff <vm name>
+```
+#### vmstate ####
+```
+vmstate --all
+vmstate <vm name>
+```
+#### vmlist ####
+```
+vmlist
+vmlist --all
+vmlist --valid
+vmlist <vm name>
+```
