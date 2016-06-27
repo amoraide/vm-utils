@@ -6,8 +6,9 @@ FILE_DIR=$(dirname "$FILE_PATH")
 LIST_FILE=$FILE_DIR"/vm.list"
 LOG_FILE=$FILE_DIR"/vm.log"
 
-VALID_VMS=($(vboxmanage list vms | grep -oP '"\K[^"\047]+(?=["\047])'))
 VMLIST=()
+VALID_COUNT=($(vboxmanage list vms | wc -l))
+
 while IFS=$'\n' read -a vm
 do
   VMLIST+=(${vm})
@@ -25,11 +26,14 @@ elif [ $# -eq 1 ]; then
       echo "VM \"${vm}\" is registered"
     fi
   done
-  for valid in ${VALID_VMS[@]}; do
-    if [ $1 == "--all" ] || [ $1 == $valid ] || [ $1 == "--valid" ]; then
+  index=1
+  while [ $index -le $VALID_COUNT ]; do
+    VALID_VM="$(vboxmanage list vms | cut -d \" -f2 | head -n $index | tail -n 1)"
+    if [ $1 == "--all" ] || [ $1 == "--valid" ] || [ "$VALID_VM" = $1 ]; then
       missing=false
-      echo "VM \"$valid\" is a valid VM"
+      echo "$VALID_VM is valid"
     fi
+    index=$[$index+1]
   done
   if $missing ; then
     echo "No VM \"$1\" found"
