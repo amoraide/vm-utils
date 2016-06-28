@@ -10,7 +10,7 @@ LOG_FILE=$FILE_DIR"/vm.log"
 VMLIST=()
 while IFS=$'\n' read -a config
 do
-  VMLIST+=(${config})
+  VMLIST+=("${config}")
 done < $LIST_FILE
 
 # Handle Commands
@@ -19,15 +19,17 @@ if [ $# -ne 1 ]
   then
     echo "Invalid Parameters"
 else
-  for vm in ${VMLIST[@]}
+  for vm in "${VMLIST[@]}"
   do
-    if [ $1 == "--all" ] || [ $1 == $vm ]
+    if [ "$1" == "--all" ] || [ "$1" == "$vm" ]
       then
         missing=false
         echo "Turning \"$vm\" on"
-        vboxmanage startvm $vm --type headless 2>>$LOG_FILE
+#        vboxmanage startvm "$vm" --type headless 2>>$LOG_FILE
         if [ $? -ne 0 ]; then
           echo "Failed turning \"$vm\" on"
+        else
+          echo "Completed turning \"$vm\" on"
         fi
     fi
   done

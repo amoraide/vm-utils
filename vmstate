@@ -10,7 +10,7 @@ LOG_FILE=$FILE_DIR"/vm.log"
 VMLIST=()
 while IFS=$'\n' read -a config
 do
-  VMLIST+=(${config})
+  VMLIST+=("${config}")
 done < $LIST_FILE
 
 # Handle Commands
@@ -19,12 +19,12 @@ if [ $# -ne 1 ]
   then
     echo "Invalid Parameters"
 else
-  for vm in ${VMLIST[@]}
+  for vm in "${VMLIST[@]}"
   do
-    if [ $1 == "--all" ] || [ $1 == $vm ]
+    if [ "$1" == "--all" ] || [ "$1" == "$vm" ]
       then
         missing=false
-        online=$(vboxmanage showvminfo $vm | grep -c "running" )
+        online=$(vboxmanage showvminfo "$vm" | grep -c "running" )
         if [ $online -eq 0 ]; then
           echo "\"$vm\" is currently offline"
         else
@@ -32,7 +32,7 @@ else
         fi
     fi
   done
-fi
-if $missing ; then
-  echo "No VM \"$1\" registered"
+  if $missing ; then
+    echo "No VM \"$1\" registered"
+  fi
 fi
