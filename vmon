@@ -25,7 +25,7 @@ else
       then
         missing=false
         echo "Turning \"$vm\" on"
-#        vboxmanage startvm "$vm" --type headless 2>>$LOG_FILE
+        vboxmanage startvm "$vm" --type headless 2>>$LOG_FILE
         if [ $? -ne 0 ]; then
           echo "Failed turning \"$vm\" on"
         else

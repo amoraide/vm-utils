@@ -25,7 +25,7 @@ else
       then
         missing=false
         echo "Turning \"$vm\" off"
-        vboxmanage controlvm $vm poweroff 2>>$LOG_FILE
+        vboxmanage controlvm "$vm" poweroff 2>>$LOG_FILE
         if [ $? -eq 0 ]; then 
           echo "Successfully turned \"$vm\" off"
         else
