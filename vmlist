@@ -31,7 +31,7 @@ elif [ $# -eq 1 ]; then
     VALID_VM="$(vboxmanage list vms | cut -d \" -f2 | head -n $index | tail -n 1)"
     if [ $1 == "--all" ] || [ $1 == "--valid" ] || [ "$VALID_VM" = $1 ]; then
       missing=false
-      echo "$VALID_VM is valid"
+      echo "VM \"$VALID_VM\" is valid"
     fi
     index=$[$index+1]
   done
