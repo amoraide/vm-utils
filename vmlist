@@ -3,27 +3,21 @@
 args=("$@")
 FILE_PATH=$(readlink -f "$0")
 FILE_DIR=$(dirname "$FILE_PATH")
-LIST_FILE=$FILE_DIR"/vm.list"
-LOG_FILE=$FILE_DIR"/vm.log"
+FUNC_FILE=$FILE_DIR"/vm.functions"
 
-VMLIST=()
+. $FUNC_FILE
 VALID_COUNT=($(vboxmanage list vms | wc -l))
-
-while IFS=$'\n' read -a vm
-do
-  VMLIST+=("${vm}")
-done < $LIST_FILE
 
 if [ $# -eq 0 ]; then
   for vm in "${VMLIST[@]}"; do
-    echo "VM \"${vm}\" is registered"
+    valid_println "VM \"${vm}\" is registered"
   done
 elif [ $# -eq 1 ]; then
   missing=true
   for vm in "${VMLIST[@]}"; do
     if [ "$1" == "--all" ] || [ "$1" == "$vm" ]; then
       missing=false
-      echo "VM \"${vm}\" is registered"
+      valid_println "VM \"${vm}\" is registered"
     fi
   done
   index=1
@@ -36,8 +30,8 @@ elif [ $# -eq 1 ]; then
     index=$[$index+1]
   done
   if $missing ; then
-    echo "No VM \"$1\" found"
+    invalid_println "No VM \"$1\" found"
   fi
 else
-  echo "Invalid parameters"
+  invalid_println "Invalid parameters"
 fi

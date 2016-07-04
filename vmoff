@@ -3,15 +3,9 @@
 args=("$@")
 FILE_PATH=$(readlink -f "$0")
 FILE_DIR=$(dirname "$FILE_PATH")
-LIST_FILE=$FILE_DIR"/vm.list"
-LOG_FILE=$FILE_DIR"/vm.log"
+FUNC_FILE=$FILE_DIR"/vm.functions"
 
-# Preparation
-VMLIST=()
-while IFS=$'\n' read -a config
-do
-  VMLIST+=("${config}")
-done < $LIST_FILE
+. $FUNC_FILE
 
 # Handle Commands
 missing=true
@@ -27,14 +21,13 @@ else
         echo "Turning \"$vm\" off"
         vboxmanage controlvm "$vm" poweroff 2>>$LOG_FILE
         if [ $? -eq 0 ]; then 
-          echo "Successfully turned \"$vm\" off"
+          valid_println "Successfully turned \"$vm\" off"
         else
-          echo "Failed turning \"$vm\" off"
+          invalid_println "Failed turning \"$vm\" off"
         fi
     fi
   done
 fi
-
 if $missing ; then
-  echo "No VM \"$1\" registered"
+  invalid_println "No VM \"$1\" registered"
 fi

@@ -11,15 +11,9 @@
 args=("$@")
 FILE_PATH=$(readlink -f "$0")
 FILE_DIR=$(dirname "$FILE_PATH")
-LIST_FILE=$FILE_DIR"/vm.list"
-LOG_FILE=$FILE_DIR"/vm.log"
+FUNC_FILE=$FILE_DIR"/vm.functions"
 
-# Preparation
-VMLIST=()
-while IFS=$'\n' read -a config
-do
-  VMLIST+=("${config}")
-done < $LIST_FILE
+. $FUNC_FILE
 
 # Handle Commands
 missing=true
@@ -38,15 +32,15 @@ else
         else
           ip=$(VBoxManage guestproperty get "$vm" "/VirtualBox/GuestInfo/Net/0/V4/IP" | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
           if [ "$ip" == "" ]; then
-            echo "Could not find field, please confirm that guest has vbox guest additions installed"
+            invalid_println "Could not find field, please confirm that guest has vbox guest additions installed"
           else
-            echo "VM \"$vm\" is on: "$ip
+            valid_println "VM \"$vm\" is on: "$ip
           fi
         fi
     fi
   done
   if $missing ; then
-    echo "No VM \"$1\" registered"
+    invalid_println "No VM \"$1\" registered"
   fi
 fi
 

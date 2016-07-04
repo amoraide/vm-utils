@@ -1,0 +1,38 @@
+#!/bin/bash
+
+FILE_PATH=$(readlink -f "$0")
+FILE_DIR=$(dirname "$FILE_PATH")
+CONFIG_FILE=$FILE_DIR"/vm.config"
+LIST_FILE=$FILE_DIR"/vm.list"
+LOG_FILE=$FILE_DIR"/vm.log"
+
+. $CONFIG_FILE
+
+VMLIST=()
+while IFS=$'\n' read -a vm
+do
+  VMLIST+=("${vm}")
+done < $LIST_FILE
+
+function valid_println {
+  if [ $# -ne 1 ]; then
+    echo "Error in valid_println!" 2>>$LOG_FILE
+  else
+    if $color ; then
+      printf "\033[0;32m$1\033[0m\n"
+    else
+     echo $1
+    fi
+  fi
+}
+function invalid_println {
+  if [ $# -ne 1 ]; then
+    echo "Error in invalid_println!" 2>>$LOG_FILE
+  else
+    if $color ; then
+      printf "\033[0;31m$1\033[0m\n"
+    else
+      echo $1
+    fi
+  fi
+}
