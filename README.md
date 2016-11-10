@@ -1,5 +1,7 @@
 ## Introduction ##
-This is a set of Virtualbox tools written for general management of Virtualbox VMs, such as turning a VM on or off through console.
+This is a set of Virtualbox tools written for general management of Virtualbox VMs, such as turning a VM on or off through console. Please note, this toolset's primary use is to do things to a headless VM server through the console.
+
+My own personal usage of these tools is to better manipulate environments where server to server communication is the norm.
 
 ## Setup ##
 In your `vm.list` file, add the list of VMs you want available to the tool.
