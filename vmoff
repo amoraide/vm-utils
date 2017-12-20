@@ -7,27 +7,30 @@ FUNC_FILE=$FILE_DIR"/vm.functions"
 
 . $FUNC_FILE
 
-# Handle Commands
-missing=true
-if [ $# -ne 1 ]
-  then
-    echo "Invalid Parameters"
-else
-  for vm in "${VMLIST[@]}"
-  do
-    if [ "$1" == "--all" ] || [ "$1" == "$vm" ]
-      then
-        missing=false
-        echo "Turning \"$vm\" off"
-        vboxmanage controlvm "$vm" poweroff 2>>$LOG_FILE
-        if [ $? -eq 0 ]; then 
-          valid_println "Successfully turned \"$vm\" off"
-        else
-          invalid_println "Failed turning \"$vm\" off"
-        fi
+function turn_off {
+    echo "Turning \"$1\" off"
+    vboxmanage controlvm "$1" poweroff 2>>$LOG_FILE
+    if [ $? -eq 0 ]; then
+        valid_println "Successfully turned \"$1\" off"
+    else
+        invalid_println "Failed turning \"$1\" off"
     fi
-  done
-fi
-if $missing ; then
-  invalid_println "No VM \"$1\" registered"
+}
+
+if [ $# -lt 1 ]; then
+    echo "Invalid parameters"
+elif [ $# -eq 1 ] && [ "$1" == "--all" ]; then
+    for vm in "${VMLIST[@]}"; do
+        turn_off $vm
+    done
+else
+    while [[ $# -gt 0 ]]; do
+        param="$1"
+        if [[ "  ${VMLIST[@]} " =~ " ${param} " ]]; then
+            turn_off $param
+        else
+            invalid_println "No VM ${param} registered"
+        fi
+        shift
+    done
 fi

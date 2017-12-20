@@ -6,27 +6,42 @@ FILE_DIR=$(dirname "$FILE_PATH")
 FUNC_FILE=$FILE_DIR"/vm.functions"
 
 . $FUNC_FILE
-# Handle Commands
-missing=true
-if [ $# -ne 1 ]
-  then
-    echo "Invalid Parameters"
-else
-  for vm in "${VMLIST[@]}"
-  do
-    if [ "$1" == "--all" ] || [ "$1" == "$vm" ]
-      then
-        missing=false
-        echo "Turning \"$vm\" on"
-        vboxmanage startvm "$vm" --type headless 2>>$LOG_FILE
-        if [ $? -ne 0 ]; then
-          invalid_println "Failed turning \"$vm\" on"
-        else
-          valid_println "Completed turning \"$vm\" on"
-        fi
+
+function turn_on {
+    if $2 ; then
+        echo "Turning on \"${1}\""
+        vboxmanage startvm "$1" --type headless 2>>$LOG_FILE
+    else
+        echo "Launching \"${1}\""
+        vboxmanage startvm "$1" 2>>$LOG_FILE
     fi
-  done
-fi
-if $missing ; then
-  invalid_println "No VM \"$1\" registered"
+    if [ $? -ne 0 ]; then
+        invalid_println "Failed turning \"$1\" on"
+    else
+        valid_println "Completed turning \"$1\" on"
+    fi
+}
+
+if [ $# -lt 1 ]; then
+    echo "Invalid parameters"
+elif [ $# -eq 1 ] && [ "$1" == "--all" ]; then
+    for vm in "${VMLIST[@]}"; do
+        turn_on $vm true
+    done
+else
+    while [[ $# -gt 0 ]]; do
+        param="$1"
+        headless=true
+        if [ $param == "--head" ]; then
+            headless=false
+            param="$2"
+            shift
+        fi
+        if [[ "  ${VMLIST[@]} " =~ " ${param} " ]]; then
+            turn_on $param $headless
+        else
+            invalid_println "No VM ${param} registered"
+        fi
+        shift
+    done
 fi
