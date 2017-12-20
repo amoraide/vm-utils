@@ -32,7 +32,7 @@ else
     while [[ $# -gt 0 ]]; do
         param="$1"
         headless=true
-        if [ $param == "--head" ]; then
+        if [ $# -ne 1 ] && [ $param == "--head" ]; then
             headless=false
             param="$2"
             shift
@@ -40,7 +40,7 @@ else
         if [[ "  ${VMLIST[@]} " =~ " ${param} " ]]; then
             turn_on $param $headless
         else
-            invalid_println "No VM ${param} registered"
+            invalid_println "No VM \"${param}\" registered"
         fi
         shift
     done
