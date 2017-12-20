@@ -25,12 +25,17 @@ vmlist
 #### vmon ####
 ```
 vmon --all
-vmon <vm name>
+vmon <vm>
+vmon --head <vm>
+vmon <vm1> --head <vm2> ...
+vmon <vm1> <vm2> ...
+
 ```
 #### vmoff ####
 ```
 vmoff --all
-vmoff <vm name>
+vmoff <vm>
+vmoff <vm1> <vm2> ...
 ```
 #### vmstate ####
 ```
